@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Only Messages
+        script(type='text/javascript', src='/javascripts/index.js', defer)
+        link(rel='stylesheet', href='/stylesheets/index.css')
+        block stylesheet
+
+    body 
+        .container
+
+            main 
+                block content
+            
+            footer 
+                a(href="#" rel="noreferrer" target="_blank" aria-label="visit author's github")
+                    span.icon.mdi--github
+                span © 2023 - Designed & coded by Weiss Bai
