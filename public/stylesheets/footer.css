@@ -1,0 +1,13 @@
+footer {
+	grid-area: footer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 5px;
+	padding: 10px;
+	box-shadow: 0px -5px 5px 1px var(--light-scheme-shadow);
+	background-color: var(--light-scheme-bgc);
+	color: var(--light-scheme-color);
+	z-index: 1;
+}
