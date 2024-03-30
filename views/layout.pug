@@ -10,6 +10,48 @@ html(lang="en")
 
     body 
         .container
+            header 
+                div.logo
+                    h1 Only Messages
+                    a(href='/') 
+                        img(src="/images/logo.png", alt="logo")
+                nav
+                    div.wrapIcon
+                        button(type="button") 
+                            span.icon.mdi--account
+                    ul
+                        li
+                            p #[Strong Signed in as]
+                            p 
+                                span example
+                                span @gmail.com
+                        li
+                            div.toggle
+                                div.wrapToggleIcon
+                                    div
+                                        span.icon.mdi--day
+                                        | Light Theme
+                                    div 
+                                        span.icon.mdi--night
+                                        | Dark Theme
+                                div.wrapToggleButton
+                                    button(type="button")
+                                        div
+                        li
+                            a(href="") 
+                                if user
+                                    span.icon.mdi--logout 
+                                    | Logout
+                                else
+                                    span.icon.mdi--login
+                                    | Login
+                        
+                        //-For desktop 
+                        //- div.toggle
+                            //-     span.icon.mdi--day
+                            //-     button(type="button")
+                            //-         div
+                            //-     span.icon.mdi--night
 
             main 
                 block content
