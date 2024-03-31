@@ -60,6 +60,7 @@ header nav ul {
 	display: flex;
 	flex-direction: column;
 	opacity: 0;
+	visibility: hidden;
 }
 
 header nav ul li:first-of-type {
