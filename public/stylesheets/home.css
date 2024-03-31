@@ -1,0 +1,146 @@
+.home {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 10px;
+	height: 100%;
+	row-gap: 30px;
+}
+
+.home h2 {
+	text-align: center;
+}
+
+.home h2 span {
+	color: var(--light-scheme-highlight-color);
+}
+
+.home > p {
+	text-align: center;
+}
+
+.home ul {
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+}
+
+.home ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 10px;
+}
+
+.home ul li > div.date {
+	border-radius: 15px;
+	padding: 5px 10px;
+	background-color: var(--light-scheme-bgc);
+}
+
+.home ul li .content {
+	display: grid;
+	grid-template:
+		"profile name 		   timestamp" auto
+		"link 	 speechBalloon timestamp" auto
+		/ auto auto auto;
+	row-gap: 5px;
+}
+
+.home ul li.reverse .content {
+	grid-template:
+		"timestamp name 	  profile" auto
+		"timestamp speechBalloon link" auto
+		/ auto auto auto;
+}
+
+.home ul li .content .profile {
+	grid-area: profile;
+}
+
+.home ul li .content .profile img {
+	width: var(--icon-mobile-size);
+	height: var(--icon-mobile-size);
+	border-radius: 100%;
+}
+
+.home ul li .content .link {
+	grid-area: link;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.home ul li .content .link a {
+	padding: 10px 0;
+}
+
+.home ul li .content .link a span.icon {
+	width: var(--icon-desktop-size);
+	height: var(--icon-desktop-size);
+}
+
+.home ul li .content .name {
+	grid-area: name;
+	align-self: center;
+	padding: 10px;
+}
+
+.home ul li .content .speechBalloon {
+	grid-area: speechBalloon;
+	display: flex;
+}
+
+.home ul li.reverse .content .speechBalloon {
+	flex-direction: row-reverse;
+}
+
+.home ul li .content .speechBalloon .triangle {
+	grid-area: triangle;
+	--triangleDegrees: 20deg;
+	align-self: flex-start;
+	transform-origin: right bottom;
+	transform: rotate(var(--triangleDegrees));
+	border-top: 0px solid transparent;
+	border-left: 0px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 15px solid var(--light-scheme-bgc);
+}
+
+.home ul li.reverse .content .speechBalloon .triangle {
+	transform-origin: left bottom;
+	transform: rotate(calc(0deg - var(--triangleDegrees)));
+	border-left: 15px solid var(--light-scheme-bgc);
+	border-right: 0px solid transparent;
+}
+
+.home ul li .content .speechBalloon .message {
+	grid-area: message;
+	background-color: var(--light-scheme-bgc);
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	padding: 10px;
+	box-shadow: 3px 3px 3px 1px var(--light-scheme-shadow);
+}
+
+.home ul li.reverse .content .speechBalloon .message {
+	border-top-right-radius: 0px;
+}
+
+.home ul li .content .timestamp {
+	grid-area: timestamp;
+	align-self: flex-end;
+	margin-left: 5px;
+}
+
+.home ul li.reverse .content .timestamp {
+	margin-left: 0px;
+	margin-right: 5px;
+}
+
+/* icon */
+.home .mdi--delete {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z'/%3E%3C/svg%3E");
+}
+.home .mdi--edit {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z'/%3E%3C/svg%3E");
+}
