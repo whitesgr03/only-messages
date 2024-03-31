@@ -23,8 +23,8 @@ html(lang="en")
                     a(href='/') 
                         img(src="/images/logo.png", alt="logo")
                 nav
-                    div.wrapIcon
-                        button(type="button") 
+                    button.account(type="button")
+                        div.wrapIcon
                             span.icon.mdi--account
                     ul
                         li
@@ -33,7 +33,7 @@ html(lang="en")
                                 span example
                                 span @gmail.com
                         li
-                            div.toggle
+                            div.theme
                                 div.wrapToggleIcon
                                     div
                                         span.icon.mdi--day
@@ -42,14 +42,15 @@ html(lang="en")
                                         span.icon.mdi--night
                                         | Dark Theme
                                 div.wrapToggleButton
-                                    button(type="button")
+                                    button.themeToggle(type="button")
                                         div
                         li
-                            a(href="") 
-                                if user
+                            if user
+                                a(href="/user/logout") 
                                     span.icon.mdi--logout 
                                     | Logout
-                                else
+                            else
+                                a(href="/user/sign-in") 
                                     span.icon.mdi--login
                                     | Login
                         
