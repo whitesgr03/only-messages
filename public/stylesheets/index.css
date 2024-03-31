@@ -135,6 +135,10 @@ svg {
 	overflow: scroll;
 }
 
+main {
+	background-color: var(--light-scheme-main);
+}
+
 .icon {
 	display: inline-block;
 	background-repeat: no-repeat;
