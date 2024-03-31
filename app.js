@@ -2,6 +2,7 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
+const errorLog = require("debug")("ServerError");
 
 const compression = require("compression");
 const helmet = require("helmet");
@@ -48,5 +49,23 @@ app.use((req, res, next) => {
 	next(createError(404, "Page not found", { type: "page" }));
 });
 
+// error handler
+app.use((err, req, res, next) => {
+	res.status(err.status || 500);
+
+	const renderNotFound = () => {
+		err.cause && errorLog(`${err.cause.name}: ${err.cause.message}`);
+		res.render("notFound", {
+			type: err.type,
+		});
+	};
+
+	const renderError = () => {
+		errorLog(`${err.name}: ${err.message}`);
+		res.render("error");
+	};
+
+	err.type ? renderNotFound() : renderError();
+});
 
 module.exports = app;
