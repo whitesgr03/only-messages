@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const logger = require("morgan");
 
 const compression = require("compression");
 const helmet = require("helmet");
@@ -34,6 +35,7 @@ process.env.NODE_ENV === "production" &&
 		})
 	);
 app.use(compression());
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
