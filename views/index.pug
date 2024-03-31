@@ -1,0 +1,28 @@
+extends layout 
+
+block stylesheet
+    link(rel='stylesheet', href='/stylesheets/home.css')
+
+
+block content
+    div.home
+        h2 Special messages for #[span members] only
+        p Only members can send the messages
+        ul
+            each user in randomUser
+                li
+                    //- div.date Dec, 5, 2023
+                    div.content
+                        div.profile
+                            img.avatar(src=user.picture.medium, alt="User")
+                        div.link
+                            a(href="/") 
+                                span.icon.mdi--edit
+                            a(href="/") 
+                                span.icon.mdi--delete
+                        p.name= user.name.last
+                        div.speechBalloon
+                            div.triangle
+                            div.message
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur enim voluptates asperiores! Dolorem, numquam praesentium tenetur facere delectus ad, error cumque fuga blanditiis quas cum. Autem voluptatibus reprehenderit veritatis officiis!
+                        p.timestamp 15:33
