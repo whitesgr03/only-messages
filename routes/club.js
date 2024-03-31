@@ -7,21 +7,27 @@ const messageControllers = require("../controllers/messageController");
 
 router.get("/", messageControllers.index);
 
-router("/message/create")
+router
+	.route("/message/create")
 	.get(messageControllers.messageCreateGet)
 	.post(messageControllers.messageCreatePost);
-router("/message/update/:id")
+router
+	.route("/message/update/:id")
 	.get(messageControllers.messageUpdateGet)
 	.post(messageControllers.messageUpdatePost);
-router("/message/delete/:id")
+router
+	.route("/message/delete/:id")
 	.get(messageControllers.messageDeleteGet)
 	.post(messageControllers.messageDeletePost);
 
-router("/user/register")
+router
+	.route("/user/register")
 	.get(userControllers.userCreateGet)
 	.post(userControllers.userCreatePost);
-router("/user/sign-in")
+router
+	.route("/user/sign-in")
 	.get(userControllers.userAuthGet)
 	.post(userControllers.userAuthPost);
 router.get("/user/logout", userControllers.userLogoutGet);
+
 module.exports = router;
