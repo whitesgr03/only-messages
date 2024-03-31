@@ -38,13 +38,14 @@ header nav {
 
 header nav.active ul {
 	opacity: 1;
+	visibility: visible;
 }
 
-header nav .wrapIcon {
+header nav .account {
 	padding: 5px 10px;
 }
 
-header nav .wrapIcon > button {
+header nav .account .wrapIcon {
 	border-radius: 100%;
 	border: 4px solid var(--light-scheme-color);
 }
@@ -86,7 +87,7 @@ header nav ul li p span:last-of-type {
 	flex: 1 1 auto;
 }
 
-header nav ul li .toggle {
+header nav ul li .theme {
 	--toggle-width: 45px;
 	--toggle-padding: 2px;
 	--toggle-border: 2px;
@@ -95,12 +96,12 @@ header nav ul li .toggle {
 	align-items: center;
 }
 
-header nav ul li .toggle .wrapToggleIcon {
+header nav ul li .theme .wrapToggleIcon {
 	flex: 1 1 60%;
 	position: relative;
 }
 
-header nav ul li .toggle .wrapToggleIcon > div {
+header nav ul li .theme .wrapToggleIcon > div {
 	display: flex;
 	align-items: center;
 	column-gap: 10px;
@@ -111,22 +112,22 @@ header nav ul li .toggle .wrapToggleIcon > div {
 	transition: all 0.3s ease;
 }
 
-header nav ul li .toggle.active .wrapToggleIcon > div:first-of-type {
+header nav ul li .theme.active .wrapToggleIcon > div:first-of-type {
 	opacity: 0;
 	visibility: hidden;
 }
 
-header nav ul li .toggle .wrapToggleIcon > div:last-of-type {
+header nav ul li .theme .wrapToggleIcon > div:last-of-type {
 	opacity: 0;
 	visibility: hidden;
 }
 
-header nav ul li .toggle.active .wrapToggleIcon > div:last-of-type {
+header nav ul li .theme.active .wrapToggleIcon > div:last-of-type {
 	opacity: 1;
 	visibility: visible;
 }
 
-header nav ul li .toggle.active button div {
+header nav ul li .theme.active button div {
 	transform: translateX(
 		calc(
 			100% - calc(var(--toggle-padding) * 2) + var(--toggle-slide) -
@@ -135,18 +136,18 @@ header nav ul li .toggle.active button div {
 	);
 }
 
-header nav ul li .toggle > div > div .icon {
+header nav ul li .theme > div > div .icon {
 	width: var(--icon-desktop-size);
 	height: var(--icon-desktop-size);
 }
 
-header nav ul li .toggle .wrapToggleButton {
+header nav ul li .theme .wrapToggleButton {
 	flex: 1 1 40%;
 	display: flex;
 	justify-content: center;
 }
 
-header nav ul li .toggle .wrapToggleButton button {
+header nav ul li .theme .wrapToggleButton button {
 	height: calc(
 		var(--toggle-width) / 2 +
 			calc(var(--toggle-padding) + calc(var(--toggle-border) * 2) + 2px)
@@ -159,7 +160,7 @@ header nav ul li .toggle .wrapToggleButton button {
 	padding: 0 var(--toggle-padding);
 }
 
-header nav ul li .toggle button div {
+header nav ul li .theme button div {
 	display: flex;
 	align-items: center;
 	transform: translateX(0%);
