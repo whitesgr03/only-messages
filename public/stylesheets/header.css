@@ -109,31 +109,11 @@ header nav ul li .theme .wrapToggleIcon > div {
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
-	transition: all 0.3s ease;
-}
-
-header nav ul li .theme.active .wrapToggleIcon > div:first-of-type {
-	opacity: 0;
-	visibility: hidden;
 }
 
 header nav ul li .theme .wrapToggleIcon > div:last-of-type {
 	opacity: 0;
 	visibility: hidden;
-}
-
-header nav ul li .theme.active .wrapToggleIcon > div:last-of-type {
-	opacity: 1;
-	visibility: visible;
-}
-
-header nav ul li .theme.active button div {
-	transform: translateX(
-		calc(
-			100% - calc(var(--toggle-padding) * 2) + var(--toggle-slide) -
-				calc(var(--toggle-border) * 2)
-		)
-	);
 }
 
 header nav ul li .theme > div > div .icon {
