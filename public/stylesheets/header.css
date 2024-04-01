@@ -205,20 +205,53 @@ header .mdi--login {
 
 /* dark scheme */
 .dark header {
-	border-bottom: 1px solid var(--light-scheme-shadow);
+	border-bottom: 1px solid var(--dark-scheme-shadow);
 	background-color: var(--dark-scheme-bgc);
 	color: var(--dark-scheme-color);
 	box-shadow: none;
 }
 
-.dark header h1 a {
-	color: var(--dark-scheme-highlight-color);
+.dark header nav .account .wrapIcon {
+	border: 2px solid var(--dark-scheme-color);
 }
 
-.dark header button:hover {
+.dark header nav ul {
+	border: 1px solid var(--dark-scheme-shadow);
 	background-color: var(--dark-button-link-hover-bgc);
 }
 
-.dark header .hamburger button > div .line {
-	background-color: var(--dark-scheme-color);
+.dark header nav ul li:first-of-type {
+	border-bottom: 1px solid var(--dark-scheme-color);
+}
+
+.dark header nav ul li .theme {
+	--toggle-border: 1px;
+}
+
+.dark header nav ul li .theme .wrapToggleButton button {
+	background-color: var(--dark-list-link-hover-bgc);
+	border-color: var(--dark-scheme-color);
+}
+
+.dark header nav ul li .theme button div {
+	border: 1px solid var(--dark-scheme-color);
+	background-color: var(--dark-scheme-bgc);
+}
+
+.dark header nav ul li .theme button div {
+	transform: translateX(
+		calc(
+			100% - calc(var(--toggle-padding) * 2) + var(--toggle-slide) -
+				calc(var(--toggle-border) * 2)
+		)
+	);
+}
+
+.dark header nav ul li .theme .wrapToggleIcon > div:first-of-type {
+	opacity: 0;
+	visibility: hidden;
+}
+.dark header nav ul li .theme .wrapToggleIcon > div:last-of-type {
+	opacity: 1;
+	visibility: visible;
 }
