@@ -149,8 +149,11 @@ main {
 	height: var(--icon-mobile-size);
 }
 
+/* dark scheme */
+
 .dark * {
 	font-weight: 300;
+	color: var(--dark-scheme-color);
 }
 
 .dark h1,
@@ -166,6 +169,10 @@ main {
 
 .dark img {
 	filter: brightness(0.8) contrast(1.2);
+}
+
+.dark main {
+	background-color: var(--dark-scheme-bgc);
 }
 
 .dark .icon {
