@@ -1,0 +1,167 @@
+form {
+	border-radius: 10px;
+	border: 2px solid var(--light-scheme-color);
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	padding: 15px 0;
+}
+
+form > * {
+	padding: 0 15px;
+}
+
+form > div {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+form label.error {
+	color: var(--light-error-label-color);
+}
+form label.error > * {
+	border-color: var(--light-error-label-color);
+}
+form label.error + span {
+	opacity: 1;
+	color: var(--light-error-label-color);
+}
+
+/* This label pseudo-class will override error style  */
+
+form label:focus-within {
+	color: var(--light-scheme-highlight-color);
+}
+
+form label > * {
+	width: 100%;
+	border-radius: 10px;
+	margin-top: 10px;
+	border: 2px solid transparent;
+	background-color: var(--light-scheme-bgc);
+	padding: 5px;
+	min-height: var(--icon-desktop-size);
+	color: var(--light-scheme-color);
+}
+
+form label > *:focus {
+	border-color: var(--light-scheme-highlight-color);
+}
+
+form label + span {
+	display: inline-block;
+	opacity: 0;
+}
+
+form button.submit {
+	height: 45px;
+	border-radius: 10px;
+	border: 2px solid var(--light-scheme-color);
+	padding: 10px 20px;
+	background-color: var(--light-success-label-color);
+	color: var(--dark-scheme-color);
+}
+
+form div.signUpLink {
+	padding-top: 20px;
+	border-top: 2px solid var(--light-scheme-color);
+	text-align: center;
+}
+
+form div.signUpLink a {
+	text-decoration: underline dotted var(--light-scheme-highlight-color) 2px;
+	text-underline-offset: 5px;
+	color: var(--light-scheme-highlight-color);
+}
+
+form div.signUpLink a:focus {
+	font-weight: 700;
+}
+
+form label:hover {
+	color: var(--light-scheme-highlight-color);
+}
+
+form label:hover > * {
+	border-color: var(--light-scheme-highlight-color);
+}
+
+form button.submit:hover {
+	background-color: var(--dark-success-label-color);
+	color: var(--light-scheme-color);
+}
+
+/* form a {
+	background-color: var(--light-scheme-bgc);
+	color: var(--light-scheme-color);
+}
+
+form a:hover {
+	color: var(--dark-scheme-color);
+	background-color: var(--light-scheme-highlight-color);
+} */
+
+/* dark scheme */
+.dark form {
+	border-color: var(--dark-scheme-color);
+	border-width: 1px;
+}
+
+.dark form label.error {
+	color: var(--dark-error-label-color);
+}
+.dark form label.error > * {
+	border-color: var(--dark-error-label-color);
+}
+.dark form label.error + span {
+	color: var(--dark-error-label-color);
+}
+
+.dark form label:hover,
+.dark form label:focus-within {
+	color: var(--dark-scheme-highlight-color);
+}
+
+.dark form label > * {
+	border-color: transparent;
+	background-color: var(--dark-button-link-hover-bgc);
+	color: var(--dark-scheme-color);
+}
+
+.dark form label:hover > *,
+.dark form label > *:focus {
+	border-color: var(--dark-scheme-highlight-color);
+}
+
+.dark form button.submit {
+	color: var(--dark-scheme-color);
+	background-color: var(--light-success-label-color);
+	border: 0;
+}
+
+.dark form button.submit:hover {
+	color: var(--light-scheme-color);
+	background-color: var(--dark-success-label-color);
+}
+
+.dark form div.signUpLink {
+	border-top: 1px solid var(--dark-scheme-color);
+}
+
+.dark form div.signUpLink a {
+	text-decoration-color: var(--dark-scheme-highlight-color);
+	color: var(--dark-scheme-highlight-color);
+}
+
+/* 
+.dark form a {
+	color: var(--dark-scheme-color);
+	background-color: var(--dark-button-link-hover-bgc);
+	border: 0;
+}
+
+.dark form a:hover {
+	color: var(--light-scheme-color);
+	background-color: var(--dark-scheme-highlight-color);
+} */
