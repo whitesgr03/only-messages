@@ -1,10 +1,13 @@
 const asyncHandler = require("express-async-handler");
+const passport = require("../config/passport");
+const bcrypt = require("bcrypt");
+const { validationResult, checkSchema } = require("express-validator");
 
-const userCreateGet = async (req, res, next) => {};
-const userCreatePost = async (req, res, next) => {};
-const userAuthGet = async (req, res, next) => {};
-const userAuthPost = async (req, res, next) => {};
-const userLogoutGet = async (req, res, next) => {};
+const User = require("../models/user");
+
+const userSignUpGet = asyncHandler(async (req, res, next) => {
+	res.render("userSignUp", { title: "Sign Up" });
+});
 
 module.exports = {
 	userCreateGet,
