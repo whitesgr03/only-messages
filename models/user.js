@@ -7,11 +7,13 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
 	name: { type: String, required: true },
 	password: { type: String, required: true },
+	lastModified: { type: Date, required: true },
 	email: { type: String, required: true, immutable: true },
+	createdAt: { type: Date, required: true, immutable: true },
 	isAdmin: { type: Boolean, immutable: true },
-	lastModified: { type: Date, required },
-	createdAt: { type: Date, immutable: true },
 	expiresAfter: { type: Date, immutable: true },
 });
 
-module.exports = mongoose.Schema("User", UserSchema);
+const UserModel = mongoose.model("User", UserSchema);
+
+module.exports = UserModel;
