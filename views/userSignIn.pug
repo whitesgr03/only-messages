@@ -1,0 +1,34 @@
+extends layout
+
+block stylesheet
+    link(rel='stylesheet', href='/stylesheets/form.css')
+
+block content
+    div.user
+        h2= title
+
+        form(method="POST")
+            div
+                label(for="user_email") Email
+                    input#user_email(
+                        type="text" 
+                        name="email" 
+                        value!=user ? user.email : ''
+                        title="The email is required and must be standard format." 
+                        required 
+                    )
+            div
+                label(class= error ? 'error' : '' for="user_password") Password
+                    input#user_password(
+                        type="password"
+                        name="password" 
+                        value!=user ? user.password : ''
+                        title="The password is required." 
+                        required
+                    )
+                span.message(aria-live="polite")= error  ? error : 'This is a placeholder'
+            div 
+                button.submit(type="submit") Submit
+            div.signUpLink
+                p New to Only Messages?
+                a(href="/club/user/sign-up")  Create an account

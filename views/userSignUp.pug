@@ -1,0 +1,54 @@
+extends layout
+
+block stylesheet
+    link(rel='stylesheet', href='/stylesheets/form.css')
+
+block content
+    div.user
+        h2= title
+
+        form(method="POST")
+            div
+                label(class= errors && errors.name ? 'error' : '' for="user_name") User name
+                    input#user_name(
+                        type="text" 
+                        name="name" 
+                        value!=user ? user.name : ''
+                        title="The name is required and must be less than 30 long." 
+                        maxlength="30"
+                        pattern="^\\w{1,30}$"
+                        required
+                    )
+                span.message(aria-live="polite")= errors && errors.name ? errors.name.msg : 'This is a placeholder'
+            div
+                label(class= errors && errors.name ? 'error' : '' for="user_email") Email
+                    input#user_email(
+                        type="text" 
+                        name="email" 
+                        value!=user ? user.email : ''
+                        title="The email is required and must be standard format." 
+                        required
+                    )
+                span.message(aria-live="polite")= errors && errors.email ? errors.email.msg : 'This is a placeholder'
+            div
+                label(class= errors && errors.password ? 'error' : '' for="user_password") Password
+                    input#user_password(
+                        type="text"
+                        name="password" 
+                        value!=user ? user.password : ''
+                        title="The password is required." 
+                        required
+                    )
+                span.message(aria-live="polite")= errors && errors.password ? errors.password.msg : 'This is a placeholder'
+            div
+                label(class= errors && errors.confirmPassword ? 'error' : '' for="user_confirmPassword") Confirm Password
+                    input#user_confirmPassword(
+                        type="text"
+                        name="confirmPassword" 
+                        value!=user ? user.confirmPassword : ''
+                        title="The confirm password is required." 
+                        required
+                    )
+                span.message(aria-live="polite")= errors && errors.confirmPassword ? errors.confirmPassword.msg : 'This is a placeholder'
+            div
+                button.submit(type="submit") Submit
