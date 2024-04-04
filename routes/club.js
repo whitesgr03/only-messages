@@ -21,9 +21,9 @@ router
 	.post(messageControllers.messageDeletePost);
 
 router
-	.route("/user/register")
-	.get(userControllers.userCreateGet)
-	.post(userControllers.userCreatePost);
+	.route("/user/sign-up")
+	.get(userControllers.userSignUpGet)
+	.post(userControllers.userSignUpPost);
 router
 	.route("/user/sign-in")
 	.get(userControllers.userAuthGet)
