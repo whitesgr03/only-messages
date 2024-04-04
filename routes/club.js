@@ -26,8 +26,8 @@ router
 	.post(userControllers.userSignUpPost);
 router
 	.route("/user/sign-in")
-	.get(userControllers.userAuthGet)
-	.post(userControllers.userAuthPost);
+	.get(userControllers.userSignInGet)
+	.post(userControllers.userSignInPost);
 router.get("/user/logout", userControllers.userLogoutGet);
 
 module.exports = router;
