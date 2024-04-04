@@ -4,6 +4,12 @@ const path = require("path");
 const logger = require("morgan");
 const errorLog = require("debug")("ServerError");
 
+const MongoStore = require("connect-mongo");
+const session = require("express-session");
+
+const passport = require("./config/passport");
+const db = require("./config/database");
+
 const compression = require("compression");
 const helmet = require("helmet");
 
@@ -40,6 +46,21 @@ app.use(compression());
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+	session({
+		secret: "onlyMessages",
+		resave: false,
+		saveUninitialized: false,
+		store: MongoStore.create({
+			client: db.getClient(),
+		}),
+		cookie: {
+			maxAge: 1000 * 60 * 3,
+		},
+	})
+);
+app.use(passport.session());
 
 app.use("/", indexRouter);
 app.use("/club", clubRouter);
