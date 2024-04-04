@@ -9,7 +9,7 @@ const index = asyncHandler(async (req, res, next) => {
 	);
 	const data = await response.json();
 
-	res.render("index", { randomUser: data.results });
+	res.render("index", { randomUser: data.results, user: req.user });
 });
 
 const messageCreateGet = async (req, res, next) => {};
