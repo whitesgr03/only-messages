@@ -1,6 +1,9 @@
 const asyncHandler = require("express-async-handler");
-
 const fetch = require("node-fetch");
+const { validationResult, checkSchema } = require("express-validator");
+
+const authenticate = require("../utils/auth");
+const Message = require("../models/message");
 
 const index = asyncHandler(async (req, res, next) => {
 	const randomNumber = 5;
@@ -12,8 +15,12 @@ const index = asyncHandler(async (req, res, next) => {
 	res.render("index", { randomUser: data.results, user: req.user });
 });
 
-const messageCreateGet = async (req, res, next) => {};
-const messageCreatePost = async (req, res, next) => {};
+const messageCreateGet = [
+	authenticate,
+	asyncHandler(async (req, res, next) => {
+		res.render("messageForm", { title: "Send a message" });
+	}),
+];
 const messageUpdateGet = async (req, res, next) => {};
 const messageUpdatePost = async (req, res, next) => {};
 const messageDeleteGet = async (req, res, next) => {};
