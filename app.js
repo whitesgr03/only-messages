@@ -85,19 +85,13 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
 	res.status(err.status || 500);
 
-	const renderNotFound = () => {
-		err.cause && errorLog(`${err.cause.name}: ${err.cause.message}`);
-		res.render("notFound", {
-			type: err.type,
-		});
-	};
+	err.name = err.name.replace(/([A-Z])/g, " $1").trim();
 
-	const renderError = () => {
-		errorLog(`${err.name}: ${err.message}`);
-		res.render("error");
-	};
+	errorLog(`${err.status} ${err.name}: ${err.message}`);
 
-	err.type ? renderNotFound() : renderError();
+	res.render("error", {
+		error: err,
+	});
 });
 
 module.exports = app;
