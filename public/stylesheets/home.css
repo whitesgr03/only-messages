@@ -65,8 +65,11 @@
 .home ul li .content .link {
 	grid-area: link;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	justify-content: flex-end;
+}
+
+.home ul li.reverse .content .link {
+	flex-direction: row-reverse;
 }
 
 .home ul li .content .link a {
