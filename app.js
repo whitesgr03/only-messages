@@ -68,9 +68,7 @@ app.use(
 app.use(passport.session());
 
 app.use((req, res, next) => {
-	const authenticate = req.isAuthenticated();
-	authenticate && (app.locals.authenticate = authenticate);
-	authenticate && req.user && (app.locals.loginUser = req.user);
+	req.isAuthenticated() && req.user && (app.locals.loginUser = req.user);
 	next();
 });
 
