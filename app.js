@@ -78,7 +78,7 @@ app.use("/club", clubRouter);
 
 // unknown routes handler
 app.use((req, res, next) => {
-	next(createError(404, "Page not found", { type: "page" }));
+	next(createError(404, "The page you are looking for cannot be found."));
 });
 
 // error handler
