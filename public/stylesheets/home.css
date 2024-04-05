@@ -6,11 +6,11 @@
 	row-gap: 30px;
 }
 
-.home h2 {
-	text-align: center;
+.home > p:first-of-type {
+	font-size: 1.5rem;
 }
 
-.home h2 span {
+.home > p:first-of-type span {
 	color: var(--light-scheme-highlight-color);
 }
 
