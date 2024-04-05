@@ -1,0 +1,21 @@
+extends layout
+
+block stylesheet
+    link(rel='stylesheet', href='/stylesheets/form.css')
+
+block content
+    div.message
+        h2= title
+
+        form(method="POST")
+            div
+                label(class= errors && errors.content ? 'error' : '' for="message_content") content
+                    textarea#message_content(
+                        name="content" 
+                        title="The content is required" 
+                        required
+                        rows="5"
+                    )!= message ? message.content : ''
+                span.message(aria-live="polite")= errors && errors.content ? errors.content.msg : 'This is a placeholder'
+            div 
+                button.submit(type="submit") Send
