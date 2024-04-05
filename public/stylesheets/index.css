@@ -142,7 +142,7 @@ main {
 	background-color: var(--light-scheme-main);
 }
 
-main .user h2 {
+main h2 {
 	margin-bottom: 20px;
 }
 
