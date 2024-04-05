@@ -1,7 +1,6 @@
 .home {
 	display: flex;
 	flex-direction: column;
-
 	height: 100%;
 	row-gap: 30px;
 }
@@ -40,17 +39,17 @@
 .home ul li .content {
 	display: grid;
 	grid-template:
-		"profile name 		   timestamp" auto
-		"link 	 speechBalloon timestamp" auto
-		/ auto auto auto;
+		"profile name		   link   		 timestamp" auto
+		"profile speechBalloon speechBalloon timestamp" auto
+		/ auto 1fr auto auto;
 	row-gap: 5px;
 }
 
 .home ul li.reverse .content {
 	grid-template:
-		"timestamp name 	  profile" auto
-		"timestamp speechBalloon link" auto
-		/ auto auto auto;
+		"timestamp link		 	 name		   profile" auto
+		"timestamp speechBalloon speechBalloon profile" auto
+		/ auto auto 1fr auto;
 }
 
 .home ul li .content .profile {
