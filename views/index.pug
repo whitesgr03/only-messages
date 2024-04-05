@@ -16,7 +16,7 @@ block content
                         div.profile
                             img.avatar(src=message.user.picture.medium, alt="User")
                         p.name!= message.user.name.last
-                        if loginUser.isAdmin
+                        if loginUser && loginUser.isAdmin
                             div.link
                                 a(href="/") 
                                     span.icon.mdi--delete
