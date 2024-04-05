@@ -144,20 +144,26 @@ const userSignInPost = asyncHandler(async (req, res, next) => {
 
 	const schemaErrors = validationResult(req);
 
-	const authenticate = passport.authenticate("local", (err, userId, info) => {
-		err && next(err);
-		userId && req.login(userId, () => res.redirect("/"));
-		info &&
-			res.render("userSignIn", {
-				title: "Sign In",
-				error: info,
-			});
-	});
+	const user = { ...req.body };
+
+	const authenticate = passport.authenticate(
+		"local",
+		(err, userId, failInfo) => {
+			err && next(err);
+			userId && req.login(userId, () => res.redirect("/"));
+			failInfo &&
+				res.render("userSignIn", {
+					title: "Sign In",
+					user,
+					errors: { password: { msg: failInfo } },
+				});
+		}
+	);
 
 	const handleRenderErrorsMessage = () => {
 		res.render("userSignIn", {
 			title: "Sign In",
-			user: { ...req.body },
+			user,
 			errors: schemaErrors.mapped(),
 		});
 	};
