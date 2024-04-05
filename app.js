@@ -61,7 +61,7 @@ app.use(
 			client: db.getClient(),
 		}),
 		cookie: {
-			maxAge: 1000 * 60 * 3,
+			maxAge: 1000 * 60 * 60,
 		},
 	})
 );
