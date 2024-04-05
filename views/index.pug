@@ -9,20 +9,24 @@ block content
         h2 Special messages for #[span members] only
         p Only members can send the messages
         ul
-            each user in randomUser
+            each message in messages
                 li
                     //- div.date Dec, 5, 2023
                     div.content
                         div.profile
-                            img.avatar(src=user.picture.medium, alt="User")
-                        div.link
-                            a(href="/") 
-                                span.icon.mdi--edit
-                            a(href="/") 
-                                span.icon.mdi--delete
-                        p.name= user.name.last
+                            img.avatar(src=message.user.picture.medium, alt="User")
+                        p.name!= message.user.name.last
+                        if loginUser.isAdmin
+                            div.link
+                                a(href="/") 
+                                    span.icon.mdi--delete
+                                a(href="/") 
+                                    span.icon.mdi--edit
                         div.speechBalloon
                             div.triangle
                             div.message
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur enim voluptates asperiores! Dolorem, numquam praesentium tenetur facere delectus ad, error cumque fuga blanditiis quas cum. Autem voluptatibus reprehenderit veritatis officiis!
-                        p.timestamp 15:33
+                                p!= message.content
+                        p.timestamp= message.user.createdAt ? message.user.createdAt : '15:33'
+        if authenticate
+            a.addMessage(href="/club/message/create")
+                span.icon.mdi--message-plus
