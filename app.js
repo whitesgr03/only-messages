@@ -67,6 +67,12 @@ app.use(
 );
 app.use(passport.session());
 
+app.use((req, res, next) => {
+	const authenticate = req.isAuthenticated();
+	authenticate && (app.locals.authenticate = authenticate);
+	next();
+});
+
 app.use("/", indexRouter);
 app.use("/club", clubRouter);
 
