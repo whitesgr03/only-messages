@@ -27,6 +27,6 @@ block content
                             div.message
                                 p!= message.content
                         p.timestamp= message.user.createdAt ? message.user.createdAt : '15:33'
-        if authenticate
+        if loginUser
             a.addMessage(href="/club/message/create")
                 span.icon.mdi--message-plus
