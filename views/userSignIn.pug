@@ -9,7 +9,7 @@ block content
 
         form(method="POST")
             div
-                label(for="user_email") Email
+                label(class= errors && errors.email ? 'error' : '' for="user_email") Email
                     input#user_email(
                         type="text" 
                         name="email" 
@@ -17,8 +17,9 @@ block content
                         title="The email is required and must be standard format." 
                         required 
                     )
+                span.message(aria-live="polite")= errors && errors.email ? errors.email.msg : 'This is a placeholder'
             div
-                label(class= error ? 'error' : '' for="user_password") Password
+                label(class= errors && errors.password ? 'error' : '' for="user_password") Password
                     input#user_password(
                         type="password"
                         name="password" 
@@ -26,7 +27,7 @@ block content
                         title="The password is required." 
                         required
                     )
-                span.message(aria-live="polite")= error  ? error : 'This is a placeholder'
+                span.message(aria-live="polite")= errors && errors.password ? errors.password.msg : 'This is a placeholder'
             div 
                 button.submit(type="submit") Submit
             div.signUpLink
