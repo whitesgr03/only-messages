@@ -6,13 +6,50 @@ const authenticate = require("../utils/auth");
 const Message = require("../models/message");
 
 const index = asyncHandler(async (req, res, next) => {
-	const randomNumber = 5;
-	const response = await fetch(
-		`https://randomuser.me/api/?results=${randomNumber}&inc=email,name,picture`
-	);
-	const data = await response.json();
+	const getFakeMessages = async () => {
+		const randomNumber = 2;
+		const response = await fetch(
+			`https://randomuser.me/api/?results=${randomNumber}&inc=email,name,picture`
+		);
+		const data = await response.json();
 
-	res.render("index", { randomUser: data.results, user: req.user });
+		const messages = [
+			{
+				user: {
+					imageUrl: data.results[0].picture.medium,
+					name: data.results[0].name.last,
+				},
+				content:
+					"This is the default message! If you join our members, you can watch all members' messages.",
+			},
+			{
+				user: {
+					imageUrl: data.results[1].picture.medium,
+					name: data.results[1].name.last,
+				},
+				content: "Create an account to enjoy Only Messages!",
+			},
+		];
+
+		return messages;
+	};
+
+	const getMessages = async () => {
+		const messages = await Message.find({})
+			.populate("user")
+			.sort({ createdAt: 1 })
+			.exec();
+
+		return messages;
+	};
+
+	const messages = req.isAuthenticated()
+		? await getMessages()
+		: await getFakeMessages();
+
+	res.render("index", {
+		messages,
+	});
 });
 
 const messageCreateGet = [
