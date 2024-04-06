@@ -19,6 +19,8 @@ block content
                                 img.avatar(src=message.user.imageUrl alt=message.user.name)                                
                             else
                                 span.icon.mdi--anonymous
+                        if !loginUser || loginUser.id  !==   message.user.id
+                            p.name!= message.user.name
                         if loginUser && loginUser.isAdmin
                             div.link
                                 a(href="/") 
