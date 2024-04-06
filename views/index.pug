@@ -11,7 +11,8 @@ block content
         ul
             each message in messages
                 li
-                    //- div.date Dec, 5, 2023
+                    if message.isFirstMessageOfTheDay
+                        div.date= message.date
                     div.content
                         div.profile
                             img.avatar(src=message.user.picture.medium, alt="User")
