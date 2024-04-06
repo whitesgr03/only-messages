@@ -31,7 +31,7 @@ block content
                             div.triangle
                             div.message
                                 p!= message.content
-                        p.timestamp= message.user.createdAt ? message.user.createdAt : '15:33'
+                        p.timestamp= message.time
         if loginUser
             a.addMessage(href="/club/message/create")
                 span.icon.mdi--message-plus
