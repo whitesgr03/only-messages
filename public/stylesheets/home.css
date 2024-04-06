@@ -29,33 +29,35 @@
 	row-gap: 20px;
 }
 
-.home ul li > div.date {
+.home ul li > .date {
+	align-self: center;
 	border-radius: 15px;
 	padding: 5px 10px;
-	background-color: var(--light-scheme-bgc);
+	font-style: italic;
+	background-color: var(--light-scheme-shadow);
 }
 
 .home ul li .content {
 	display: grid;
 	grid-template:
-		"profile name		   link   		 timestamp" auto
-		"profile speechBalloon speechBalloon timestamp" auto
+		"profile name 			link 			link" auto
+		"...	 speechBalloon 	speechBalloon 	time" auto
 		/ auto 1fr auto auto;
-	row-gap: 5px;
 }
 
 .home ul li.reverse .content {
 	grid-template:
-		"timestamp link		 	 name		   profile" auto
-		"timestamp speechBalloon speechBalloon profile" auto
+		"link 	   link		 	 name		profile" auto
+		"time speechBalloon speechBalloon 		..." auto
 		/ auto auto 1fr auto;
 }
 
 .home ul li .content .profile {
 	grid-area: profile;
+	line-height: 0px;
 }
 
-.home ul li .content .profile img {
+.home ul li .content .profile > * {
 	width: var(--icon-mobile-size);
 	height: var(--icon-mobile-size);
 	border-radius: 100%;
@@ -64,7 +66,6 @@
 .home ul li .content .link {
 	grid-area: link;
 	display: flex;
-	justify-content: flex-end;
 }
 
 .home ul li.reverse .content .link {
@@ -72,7 +73,11 @@
 }
 
 .home ul li .content .link a {
-	padding: 10px;
+	height: 100%;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 .home ul li .content .link a span.icon {
@@ -83,7 +88,7 @@
 .home ul li .content .name {
 	grid-area: name;
 	align-self: center;
-	padding: 10px;
+	padding: 0 10px;
 }
 
 .home ul li .content .speechBalloon {
@@ -127,20 +132,20 @@
 	border-top-right-radius: 0px;
 }
 
-.home ul li .content .timestamp {
-	grid-area: timestamp;
+.home ul li .content .time {
+	grid-area: time;
 	align-self: flex-end;
 	margin-left: 5px;
 }
 
-.home ul li.reverse .content .timestamp {
+.home ul li.reverse .content .time {
 	margin-left: 0px;
 	margin-right: 5px;
 }
 
 .home .addMessage {
 	position: fixed;
-	bottom: 30px;
+	bottom: 15%;
 	right: 30px;
 	padding: 10px;
 	border-radius: 100%;
@@ -168,14 +173,17 @@
 .home .mdi--message-plus {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m8.5 18l3.5 4l3.5-4H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2zM7 9h4V5h2v4h4v2h-4v4h-2v-4H7z'/%3E%3C/svg%3E");
 }
+.home .mdi--anonymous {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12S6.5 2 12 2m2.92 10.81c-1.08 0-1.97.75-2.21 1.75c-.54-.23-1.05-.17-1.42-.01c-.24-1-1.14-1.74-2.21-1.74c-1.25 0-2.26 1.01-2.26 2.26c0 1.25 1.01 2.26 2.26 2.26c1.2 0 2.16-.91 2.25-2.08c.2-.13.71-.39 1.34.01a2.258 2.258 0 0 0 4.51-.19c0-1.25-1.01-2.26-2.26-2.26m-5.84.64c.92 0 1.62.73 1.62 1.62c0 .89-.7 1.62-1.62 1.62c-.89 0-1.62-.73-1.62-1.62c0-.89.73-1.62 1.62-1.62m5.84 0c.89 0 1.62.73 1.62 1.62c0 .89-.73 1.62-1.62 1.62c-.92 0-1.62-.73-1.62-1.62c0-.89.7-1.62 1.62-1.62m2.91-1.95H6.17v.67h11.66zm-3.68-4.61a.672.672 0 0 0-.8-.36L12 7l-1.35-.47l-.04-.03a.672.672 0 0 0-.77.42l-1.48 3.91h7.28l-1.48-3.91z'/%3E%3C/svg%3E");
+}
 
 /* dark theme */
-.dark .home h2 span {
+.dark .home > p:first-of-type span {
 	color: var(--dark-scheme-highlight-color);
 }
 
-.dark .home ul li > div.date {
-	background-color: var(--dark-scheme-bgc);
+.dark .home ul li > .date {
+	background-color: var(--dark-list-link-hover-bgc);
 }
 
 .dark .home ul li .content .speechBalloon .triangle {
