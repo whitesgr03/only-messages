@@ -14,25 +14,13 @@ block content
                 li(class= (loginUser && loginUser.id === message.user.id ? 'reverse' : ''))
                     if message.isFirstMessageOfTheDay
                         div.date= message.date
-                    div.content
-                        div.profile
-                            if message.user.imageUrl
-                                img.avatar(src=message.user.imageUrl alt=message.user.name)                                
-                            else
-                                span.icon.mdi--anonymous
-                        if !loginUser || loginUser.id  !==   message.user.id
-                            p.name!= message.user.name
-                        if loginUser && loginUser.isAdmin
-                            div.link
-                                a(href="/") 
-                                    span.icon.mdi--delete
-                                a(href="/") 
-                                    span.icon.mdi--edit
-                        div.speechBalloon
-                            div.triangle
-                            div.message
-                                p!= message.content
-                        p.time= message.time
+                        if loginUser && removeId && removeId === message.id 
+                            div.removeWrap
+                                div.alert
+                                    p Do you really want to delete?
+                                    form(method='POST')
+                                        a(href='/club') Cancel
+                                        button.submit(type='submit') Delete      
         if loginUser
             a.addMessage(href="/club/message/create")
                 span.icon.mdi--message-plus
