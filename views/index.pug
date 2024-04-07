@@ -11,7 +11,7 @@ block content
         p Only members can send the messages
         ul
             each message in messages
-                li
+                li(class= (loginUser && loginUser.id === message.user.id ? 'reverse' : ''))
                     if message.isFirstMessageOfTheDay
                         div.date= message.date
                     div.content
