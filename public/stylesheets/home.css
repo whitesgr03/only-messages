@@ -42,6 +42,50 @@
 	flex: 1 1 100%;
 }
 
+.home ul li .wrap .removeWrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.home ul li .wrap .removeWrap .alert {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	padding: 15px;
+	border-radius: 20px;
+	border: 2px solid var(--light-scheme-color);
+	background-color: var(--light-scheme-bgc);
+}
+
+.home ul li .wrap .removeWrap .alert form {
+	display: flex;
+	justify-content: space-around;
+}
+
+.home ul li .wrap .removeWrap .alert a,
+.home ul li .wrap .removeWrap .alert button.submit {
+	min-height: 45px;
+	border-radius: 10px;
+	border: 2px solid var(--light-scheme-color);
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home ul li .wrap .removeWrap .alert a {
+	background-color: var(--light-scheme-shadow);
+}
+
+.home ul li .wrap .removeWrap .alert form button.submit {
+	background-color: var(--light-error-label-color);
+	color: var(--dark-scheme-color);
+}
+
 
 .home ul li .content {
 	display: grid;
