@@ -121,6 +121,16 @@ main .delete .name {
 .home ul li .content .profile > * {
 	width: var(--icon-mobile-size);
 	height: var(--icon-mobile-size);
+}
+
+.home ul li .content .profile > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--light-scheme-color);
+	color: var(--dark-scheme-color);
+	font-size: 2.5rem;
+	font-weight: 700;
 	border-radius: 100%;
 }
 
