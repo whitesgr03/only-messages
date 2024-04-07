@@ -72,7 +72,7 @@ const userSignUpPost = [
 					bail: true,
 				},
 				custom: {
-					options: value => value.match(/^\w+$/),
+					options: value => value.match(/^[a-zA-Z]\w*$/),
 					errorMessage:
 						"The name must be alphanumeric and underscore.",
 					bail: true,
