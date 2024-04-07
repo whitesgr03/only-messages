@@ -28,11 +28,10 @@ html(lang="en")
                         div.wrapIcon
                             span.icon.mdi--account
                     ul
-                        li
-                            p #[Strong Signed in as]
-                            p 
-                                span example
-                                span @gmail.com
+                        if loginUser
+                            li
+                                p #[Strong Signed in as]
+                                p= loginUser.email
                         li
                             div.theme
                                 div.wrapToggleIcon
