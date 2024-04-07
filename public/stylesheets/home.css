@@ -37,6 +37,12 @@
 	background-color: var(--light-scheme-shadow);
 }
 
+.home ul li .wrap {
+	position: relative;
+	flex: 1 1 100%;
+}
+
+
 .home ul li .content {
 	display: grid;
 	grid-template:
