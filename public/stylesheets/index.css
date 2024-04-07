@@ -143,6 +143,7 @@ svg {
 }
 
 main {
+	grid-area: main;
 	padding: 20px 10px 30px;
 	background-color: var(--light-scheme-main);
 }
