@@ -114,7 +114,7 @@ const messageCreatePost = [
 
 		const handleRenderErrorMessage = () => {
 			res.render("messageForm", {
-				title: "Sign In",
+				title: "Send a message",
 				message,
 				errors: schemaErrors.mapped(),
 			});
