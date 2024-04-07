@@ -16,7 +16,7 @@ block content
                         value!=user ? user.name : ''
                         title="The name is required and must be less than 30 long." 
                         maxlength="30"
-                        pattern="^\\w{1,30}$"
+                        pattern="^\\^[a-zA-Z]\w*{1,30}$"
                         required
                     )
                 span.message(aria-live="polite")= errors && errors.name ? errors.name.msg : 'This is a placeholder'
