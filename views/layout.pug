@@ -46,11 +46,11 @@ html(lang="en")
                                         div
                         li
                             if loginUser
-                                a(href="club/user/logout") 
+                                a(href="/club/user/logout") 
                                     span.icon.mdi--logout 
                                     | Logout
                             else
-                                a(href="club/user/sign-in") 
+                                a(href="/club/user/sign-in") 
                                     span.icon.mdi--login
                                     | Login
                         
@@ -60,10 +60,8 @@ html(lang="en")
                             //-     button(type="button")
                             //-         div
                             //-     span.icon.mdi--night
-
-            main 
+            main
                 block content
-            
             footer 
                 a(href="#" rel="noreferrer" target="_blank" aria-label="visit author's github")
                     span.icon.mdi--github
