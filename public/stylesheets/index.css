@@ -140,7 +140,6 @@ svg {
 		"main  " 1fr
 		"footer" auto
 		/ auto;
-	overflow: scroll;
 }
 
 main {
