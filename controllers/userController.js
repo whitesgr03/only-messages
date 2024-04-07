@@ -152,7 +152,7 @@ const userSignUpPost = [
 							password: hashedPassword,
 							lastModified: currentTime,
 							createdAt: currentTime,
-							isAdmin: true,
+							isAdmin: false,
 						});
 
 						await newUser.save();
