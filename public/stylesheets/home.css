@@ -204,6 +204,7 @@ main .delete .name {
 }
 
 .home ul li.reverse .content .speechBalloon .message {
+	border-top-left-radius: 5px;
 	border-top-right-radius: 0px;
 }
 
