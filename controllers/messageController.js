@@ -19,7 +19,7 @@ const index = asyncHandler(async (req, res, next) => {
 					imageUrl: data.results[0].picture.medium,
 					name: data.results[0].name.last,
 				},
-				time: '15:33',
+				time: "15:33",
 				content:
 					"This is the default message! If you join our members, you can watch all members' messages.",
 			},
@@ -28,7 +28,7 @@ const index = asyncHandler(async (req, res, next) => {
 					imageUrl: data.results[1].picture.medium,
 					name: data.results[1].name.last,
 				},
-				time: '14:30',
+				time: "14:30",
 				content: "Create an account to enjoy Only Messages!",
 			},
 		];
