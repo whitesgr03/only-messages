@@ -221,7 +221,7 @@ main .delete .name {
 
 .home .addMessage {
 	position: fixed;
-	bottom: 15%;
+	bottom: 10%;
 	right: 30px;
 	padding: 10px;
 	border-radius: 100%;
