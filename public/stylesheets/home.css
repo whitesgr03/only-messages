@@ -262,6 +262,32 @@ main .delete .name {
 	background-color: var(--dark-list-link-hover-bgc);
 }
 
+.dark .home ul li .content .profile > div {
+	background-color: var(--dark-scheme-color);
+	color: var(--light-scheme-color);
+	font-weight: 500;
+}
+
+.dark .home ul li .wrap .removeWrap .alert {
+	border: 1px solid var(--dark-scheme-color);
+	background-color: var(--dark-button-link-hover-bgc);
+}
+
+.dark .home ul li .wrap .removeWrap .alert a,
+.dark .home ul li .wrap .removeWrap .alert button.submit {
+	color: var(--dark-scheme-color);
+	border: 1px solid var(--dark-scheme-color);
+}
+
+.dark .home ul li .wrap .removeWrap .alert a {
+	background-color: var(--dark-list-link-hover-bgc);
+}
+
+.dark .home ul li .wrap .removeWrap .alert form button.submit {
+	background-color: var(--dark-error-label-color);
+	color: var(--light-scheme-color);
+}
+
 .dark .home ul li .content .speechBalloon .triangle {
 	border-right-color: var(--dark-button-link-hover-bgc);
 }
@@ -273,4 +299,12 @@ main .delete .name {
 .dark .home ul li .content .speechBalloon .message {
 	background-color: var(--dark-button-link-hover-bgc);
 	box-shadow: none;
+}
+
+.dark .home .addMessage {
+	background-color: var(--dark-scheme-highlight-color);
+}
+
+.dark .home .addMessage .icon {
+	filter: none;
 }
