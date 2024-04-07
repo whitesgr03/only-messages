@@ -7,8 +7,8 @@ const MessageSchema = new Schema(
 	{
 		user: { type: Schema.Types.ObjectId, ref: "User", required: true },
 		content: { type: String, required: true },
-		isFirstMessageOfTheDay: { type: Boolean, immutable: true },
 		lastModified: { type: Date, required: true },
+		isFirstMessageOfTheDay: { type: Boolean, immutable: true },
 		createdAt: { type: Date, immutable: true },
 		expiresAfter: { type: Date, immutable: true },
 	},
