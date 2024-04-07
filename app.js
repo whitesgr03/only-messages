@@ -77,18 +77,20 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/club", clubRouter);
 
-// unknown routes handler
+// Unknown routes handler
 app.use((req, res, next) => {
 	next(createError(404, "The page you are looking for cannot be found."));
 });
 
-// error handler
+// Errors handler
 app.use((err, req, res, next) => {
 	res.status(err.status || 500);
 
-	err.name = err.name.replace(/([A-Z])/g, " $1").trim();
+	errorLog(`${err.name}: ${err.message}`);
 
-	errorLog(`${err.status} ${err.name}: ${err.message}`);
+	err.status ?? (err = createError(500, ""));
+
+	err.name = err.name.replace(/([A-Z])/g, " $1").trim();
 
 	res.render("error", {
 		error: err,
