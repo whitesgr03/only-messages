@@ -18,4 +18,4 @@ block content
                     )!= message ? message.content : ''
                 span.message(aria-live="polite")= errors && errors.content ? errors.content.msg : 'This is a placeholder'
             div 
-                button.submit(type="submit") Send
+                    button.submit(type="submit")=  message && message.id ? 'Edit' : 'Send'
