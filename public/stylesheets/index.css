@@ -131,6 +131,8 @@ svg {
 }
 
 .container {
+	position: relative;
+	overflow: auto;
 	height: 100vh;
 	display: grid;
 	grid-template:
