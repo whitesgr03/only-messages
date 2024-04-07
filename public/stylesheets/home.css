@@ -102,6 +102,10 @@ main .delete .name {
 		/ auto 1fr auto auto;
 }
 
+.home ul li .content.remove {
+	opacity: 0.3;
+}
+
 .home ul li.reverse .content {
 	grid-template:
 		"link 	   link		 	 name		profile" auto
