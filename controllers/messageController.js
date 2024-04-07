@@ -125,10 +125,20 @@ const messageCreatePost = [
 			: handleRenderErrorMessage();
 	}),
 ];
-const messageUpdateGet = async (req, res, next) => {};
-const messageUpdatePost = async (req, res, next) => {};
-const messageDeleteGet = async (req, res, next) => {};
-const messageDeletePost = async (req, res, next) => {};
+const messageUpdateGet = [
+	authenticate,
+	validateId,
+	asyncHandler(async (req, res, next) => {
+		const message = await Message.findById(req.params.id, {
+			content: 1,
+		}).exec();
+
+		res.render("messageForm", {
+			title: "Edit message",
+			message,
+		});
+	}),
+];
 
 module.exports = {
 	index,
