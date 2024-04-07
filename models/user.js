@@ -4,15 +4,26 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-	name: { type: String, required: true },
-	password: { type: String, required: true },
-	lastModified: { type: Date, required: true },
-	email: { type: String, required: true, immutable: true },
-	createdAt: { type: Date, required: true, immutable: true },
-	isAdmin: { type: Boolean, immutable: true },
-	expiresAfter: { type: Date, immutable: true },
-});
+const UserSchema = new Schema(
+	{
+		name: { type: String, required: true },
+		password: { type: String, required: true },
+		lastModified: { type: Date, required: true },
+		email: { type: String, required: true, immutable: true },
+		createdAt: { type: Date, required: true, immutable: true },
+		isAdmin: { type: Boolean, immutable: true },
+		expiresAfter: { type: Date, immutable: true },
+	},
+	{
+		virtuals: {
+			nameFirstLetter: {
+				get() {
+					return this.name.charAt(0).toUpperCase();
+				},
+			},
+		},
+	}
+);
 
 const UserModel = mongoose.model("User", UserSchema);
 
