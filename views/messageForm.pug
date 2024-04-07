@@ -12,7 +12,7 @@ block content
                 label(class= errors && errors.content ? 'error' : '' for="message_content") content
                     textarea#message_content(
                         name="content" 
-                        title="The content is required" 
+                        title="The content is required and must be less than 300 long." 
                         required
                         rows="5"
                     )!= message ? message.content : ''
