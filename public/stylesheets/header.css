@@ -235,3 +235,44 @@ header .mdi--login {
 	opacity: 1;
 	visibility: visible;
 }
+
+@media (min-width: 400px) {
+	header nav ul {
+		max-width: 60vw;
+	}
+}
+@media (min-width: 600px) {
+	header nav ul {
+		max-width: 45vw;
+	}
+}
+
+@media (min-width: 800px) {
+	header nav ul {
+		max-width: 30vw;
+	}
+}
+
+@media (min-width: 900px) {
+	header {
+		column-gap: 10px;
+	}
+
+	header h1 {
+		margin: 0;
+		margin-right: auto;
+	}
+
+	header nav {
+		column-gap: 10px;
+	}
+
+	header nav > .theme {
+		display: flex;
+		column-gap: 10px;
+	}
+
+	header nav ul li .theme {
+		display: none;
+	}
+}

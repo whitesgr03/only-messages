@@ -308,3 +308,46 @@ main .delete .name {
 .dark .home .addMessage .icon {
 	filter: none;
 }
+
+@media (min-width: 400px) {
+	.home .addMessage {
+		right: 15%;
+	}
+}
+
+@media (min-width: 500px) {
+	.home {
+		border: 4px solid var(--light-scheme-color);
+		border-radius: 20px;
+		padding: 10px;
+	}
+
+	.dark .home {
+		border: 1px solid var(--dark-scheme-color);
+	}
+
+	.home .addMessage {
+		right: 10%;
+	}
+}
+
+@media (min-width: 700px) {
+	.home {
+		padding: 20px;
+	}
+}
+
+@media (min-width: 900px) {
+	.home {
+		padding: 30px;
+	}
+
+	.home .addMessage {
+		right: 15%;
+	}
+
+	.home .addMessage .icon {
+		width: var(--icon-mobile-size);
+		height: var(--icon-mobile-size);
+	}
+}
