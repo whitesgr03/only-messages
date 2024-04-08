@@ -107,6 +107,16 @@ const messageCreatePost = [
 				isFirstMessageOfTheDay: !existsMessageOfTheDay,
 			});
 
+			const countUserMessages = await Message.countDocuments({
+				user: req.user.id,
+			}).exec();
+
+			const oneDay = 24 * 60 * 60 * 1000;
+
+			process.env.NODE_ENV === "production" &&
+				countUserMessages > 10 &&
+				(newUser.expiresAfter = new Date(Date.now() + oneDay));
+
 			await newMessage.save();
 			res.redirect("/");
 		};

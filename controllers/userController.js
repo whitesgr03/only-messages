@@ -155,6 +155,15 @@ const userSignUpPost = [
 							isAdmin: false,
 						});
 
+						const oneDay = 24 * 60 * 60 * 1000;
+						const userCount = User.countDocuments().exec();
+
+						process.env.NODE_ENV === "production" &&
+							userCount > 30 &&
+							(newUser.expiresAfter = new Date(
+								Date.now() + oneDay
+							));
+
 						await newUser.save();
 
 						next();
