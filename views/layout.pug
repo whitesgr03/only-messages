@@ -33,7 +33,10 @@ html(lang="en")
                         span.icon.mdi--night
                     button.account(type="button")
                         div.wrapIcon
-                            span.icon.mdi--account
+                            if loginUser
+                                div= loginUser.nameFirstLetter
+                            else
+                                span.icon.mdi--account
                     ul
                         if loginUser
                             li
