@@ -111,9 +111,10 @@
 .home ul li .content {
 	display: grid;
 	grid-template:
-		"profile name 			link 			link" auto
-		"...	 speechBalloon 	speechBalloon 	time" auto
-		/ auto 1fr auto auto;
+		"profile 	   topBar" auto
+		"profile	bottomBar" auto
+		/ auto 1fr;
+	row-gap: 5px;
 }
 
 .home ul li .content.remove {
@@ -122,9 +123,9 @@
 
 .home ul li.reverse .content {
 	grid-template:
-		"link 	   link		 	 name		profile" auto
-		"time speechBalloon speechBalloon 		..." auto
-		/ auto auto 1fr auto;
+		"topBar 	profile" auto
+		"bottomBar	profile" auto
+		/ 1fr auto;
 }
 
 .home ul li .content .profile {
