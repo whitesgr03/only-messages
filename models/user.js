@@ -9,7 +9,12 @@ const UserSchema = new Schema(
 		name: { type: String, required: true },
 		password: { type: String, required: true },
 		lastModified: { type: Date, required: true },
-		email: { type: String, required: true, immutable: true },
+		email: {
+			type: String,
+			required: true,
+			immutable: true,
+			lowercase: true,
+		},
 		createdAt: { type: Date, required: true, immutable: true },
 		isAdmin: { type: Boolean, immutable: true },
 		expiresAfter: { type: Date, immutable: true },
