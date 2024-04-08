@@ -179,26 +179,27 @@
 	height: var(--icon-desktop-size);
 }
 
-.home ul li .content .name {
-	grid-area: name;
-	align-self: center;
-	padding: 0 10px;
+.home ul li .content .bottomBar {
+	grid-area: bottomBar;
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
 }
 
-.home ul li.reverse .content .name {
-	text-align: right;
+.home ul li.reverse .content .bottomBar {
+	flex-direction: row-reverse;
+	column-gap: 5px;
 }
 
-.home ul li .content .speechBalloon {
-	grid-area: speechBalloon;
+.home ul li .content .bottomBar .speechBalloon {
 	display: flex;
 }
 
-.home ul li.reverse .content .speechBalloon {
+.home ul li.reverse .content .bottomBar .speechBalloon {
 	flex-direction: row-reverse;
 }
 
-.home ul li .content .speechBalloon .triangle {
+.home ul li .content .bottomBar .speechBalloon .triangle {
 	grid-area: triangle;
 	--triangleDegrees: 20deg;
 	align-self: flex-start;
@@ -210,36 +211,29 @@
 	border-right: 15px solid var(--light-scheme-bgc);
 }
 
-.home ul li.reverse .content .speechBalloon .triangle {
+.home ul li.reverse .content .bottomBar .speechBalloon .triangle {
 	transform-origin: left bottom;
 	transform: rotate(calc(0deg - var(--triangleDegrees)));
 	border-left: 15px solid var(--light-scheme-bgc);
 	border-right: 0px solid transparent;
 }
 
-.home ul li .content .speechBalloon .message {
-	grid-area: message;
+.home ul li .content .bottomBar .speechBalloon .message {
 	background-color: var(--light-scheme-bgc);
 	border-radius: 5px;
 	border-top-left-radius: 0px;
 	padding: 10px;
 	box-shadow: 3px 3px 3px 1px var(--light-scheme-shadow);
+	overflow-wrap: anywhere;
 }
 
-.home ul li.reverse .content .speechBalloon .message {
+.home ul li.reverse .content .bottomBar .speechBalloon .message {
 	border-top-left-radius: 5px;
 	border-top-right-radius: 0px;
 }
 
-.home ul li .content .time {
-	grid-area: time;
+.home ul li .content .bottomBar .time {
 	align-self: flex-end;
-	margin-left: 5px;
-}
-
-.home ul li.reverse .content .time {
-	margin-left: 0px;
-	margin-right: 5px;
 }
 
 .home .addMessage {
@@ -320,14 +314,15 @@
 	color: var(--dark-scheme-color);
 }
 
+.dark .home ul li .content .bottomBar .speechBalloon .triangle {
 	border-right-color: var(--dark-button-link-hover-bgc);
 }
 
-.dark .home ul li.reverse .content .speechBalloon .triangle {
+.dark .home ul li.reverse .content .bottomBar .speechBalloon .triangle {
 	border-left-color: var(--dark-button-link-hover-bgc);
 }
 
-.dark .home ul li .content .speechBalloon .message {
+.dark .home ul li .content .bottomBar .speechBalloon .message {
 	background-color: var(--dark-button-link-hover-bgc);
 	box-shadow: none;
 }
