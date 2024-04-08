@@ -258,6 +258,10 @@ header .mdi--login {
 	background-color: var(--dark-button-link-hover-bgc);
 }
 
+.dark header nav ul .email {
+	border-bottom: 1px solid var(--dark-scheme-color);
+}
+
 
 @media (min-width: 400px) {
 	header nav ul {
