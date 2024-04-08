@@ -3,6 +3,7 @@ const fetch = require("node-fetch");
 const { validationResult, checkSchema } = require("express-validator");
 
 const authenticate = require("../utils/auth");
+const validateId = require("../utils/validId");
 const Message = require("../models/message");
 
 const index = asyncHandler(async (req, res, next) => {
@@ -137,6 +138,56 @@ const messageUpdateGet = [
 			title: "Edit message",
 			message,
 		});
+	}),
+];
+const messageUpdatePost = [
+	authenticate,
+	validateId,
+	asyncHandler(async (req, res, next) => {
+		const validationSchema = {
+			content: {
+				trim: true,
+				isLength: {
+					options: {
+						min: 1,
+						max: 300,
+					},
+					errorMessage: "The content must be less than 300 long.",
+				},
+				escape: true,
+			},
+		};
+
+		await checkSchema(validationSchema, ["body"]).run(req);
+
+		const schemaErrors = validationResult(req);
+
+		const message = {
+			id: req.params.id,
+			...req.body,
+		};
+
+		const handleUpdateMessage = async () => {
+			const currentTime = new Date();
+			message.user = req.user.id;
+			message.lastModified = currentTime;
+
+			await Message.findByIdAndUpdate(req.params.id, message).exec();
+
+			res.redirect("/");
+		};
+
+		const handleRenderErrorMessage = () => {
+			res.render("messageForm", {
+				title: "Edit message",
+				message,
+				errors: schemaErrors.mapped(),
+			});
+		};
+
+		schemaErrors.isEmpty()
+			? handleUpdateMessage()
+			: handleRenderErrorMessage();
 	}),
 ];
 
