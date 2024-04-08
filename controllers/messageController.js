@@ -205,6 +205,14 @@ const messageDeleteGet = [
 		});
 	}),
 ];
+const messageDeletePost = [
+	authenticate,
+	validateId,
+	asyncHandler(async (req, res, next) => {
+		await Message.findByIdAndDelete(req.params.id).exec();
+		res.redirect("/");
+	}),
+];
 
 module.exports = {
 	index,
