@@ -149,7 +149,7 @@ header nav ul {
 	overflow: hidden;
 }
 
-header nav ul li:first-of-type {
+header nav ul .email {
 	border-bottom: 2px solid var(--light-scheme-shadow);
 }
 
