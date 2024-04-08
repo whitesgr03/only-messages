@@ -221,21 +221,21 @@ header .mdi--login {
 	font-weight: 500;
 }
 
-.dark header nav ul li .theme {
+.dark header nav .theme {
 	--toggle-border: 1px;
 }
 
-.dark header nav ul li .theme .wrapToggleButton button {
+.dark header nav .theme .wrapToggleButton button {
 	background-color: var(--dark-list-link-hover-bgc);
 	border-color: var(--dark-scheme-color);
 }
 
-.dark header nav ul li .theme button div {
+.dark header nav .theme button div {
 	border: 1px solid var(--dark-scheme-color);
 	background-color: var(--dark-scheme-bgc);
 }
 
-.dark header nav ul li .theme button div {
+.dark header nav .theme button div {
 	transform: translateX(
 		calc(
 			100% - calc(var(--toggle-padding) * 2) + var(--toggle-slide) -
@@ -244,11 +244,11 @@ header .mdi--login {
 	);
 }
 
-.dark header nav ul li .theme .wrapToggleIcon > div:first-of-type {
+.dark header nav .theme .wrapToggleIcon > div:first-of-type {
 	opacity: 0;
 	visibility: hidden;
 }
-.dark header nav ul li .theme .wrapToggleIcon > div:last-of-type {
+.dark header nav .theme .wrapToggleIcon > div:last-of-type {
 	opacity: 1;
 	visibility: visible;
 }
