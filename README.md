@@ -1,2 +1,2 @@
 # OnlyMessages
-An exclusive clubhouse where the members can write anonymous posts.
+An exclusive clubhouse where the members can write messages.
