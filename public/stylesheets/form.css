@@ -73,6 +73,11 @@ form div.signUpLink a {
 	color: var(--light-scheme-highlight-color);
 }
 
+form div.signUpLink a:hover {
+	text-decoration-style: solid;
+	font-style: italic;
+}
+
 form div.signUpLink a:focus {
 	font-weight: 700;
 }
