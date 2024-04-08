@@ -253,6 +253,12 @@ header .mdi--login {
 	visibility: visible;
 }
 
+.dark header nav ul {
+	border: 1px solid var(--dark-scheme-shadow);
+	background-color: var(--dark-button-link-hover-bgc);
+}
+
+
 @media (min-width: 400px) {
 	header nav ul {
 		max-width: 60vw;
