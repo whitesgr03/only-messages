@@ -262,6 +262,9 @@ header .mdi--login {
 	border-bottom: 1px solid var(--dark-scheme-color);
 }
 
+.dark header nav ul li a:hover {
+	background-color: var(--light-scheme-color);
+}
 
 @media (min-width: 400px) {
 	header nav ul {
