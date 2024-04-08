@@ -17,7 +17,6 @@ const index = asyncHandler(async (req, res, next) => {
 		const messages = [
 			{
 				user: {
-					imageUrl: data.results[0].picture.medium,
 					name: data.results[0].name.last,
 				},
 				time: "15:33",
@@ -26,7 +25,6 @@ const index = asyncHandler(async (req, res, next) => {
 			},
 			{
 				user: {
-					imageUrl: data.results[1].picture.medium,
 					name: data.results[1].name.last,
 				},
 				time: "14:30",
