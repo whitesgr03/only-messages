@@ -183,6 +183,7 @@ header nav ul li a:hover {
 	background-color: var(--light-scheme-shadow);
 }
 
+header nav .icon {
 	width: var(--icon-desktop-size);
 	height: var(--icon-desktop-size);
 }
