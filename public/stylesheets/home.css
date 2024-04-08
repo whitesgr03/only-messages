@@ -6,6 +6,11 @@
 	row-gap: 30px;
 }
 
+.home h2 {
+	text-align: center;
+	color: var(--light-scheme-highlight-color);
+}
+
 .home > p:first-of-type {
 	font-size: 1.5rem;
 }
