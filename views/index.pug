@@ -21,18 +21,20 @@ block content
                                     div= message.user.nameFirstLetter
                                 else
                                     span.icon.mdi--anonymous
-                            p.name!= (!loginUser || loginUser.id  !==  message.user.id) ?  message.user.name : 'You'
-                            if loginUser && loginUser.isAdmin
-                                div.link
-                                    a(href=`/club/message/delete/${message.id}`) 
-                                        span.icon.mdi--delete
-                                    a(href=`/club/message/update/${message.id}`) 
-                                        span.icon.mdi--edit
-                            div.speechBalloon
-                                div.triangle
-                                div.message
-                                    p!= message.content
-                            p.time= message.time
+                            div.topBar
+                                p.name!= (!loginUser || loginUser.id  !==  message.user.id) ?  message.user.name : 'You'
+                                if loginUser && loginUser.isAdmin
+                                    div.link
+                                        a(href=`/club/message/delete/${message.id}`) 
+                                            span.icon.mdi--delete
+                                        a(href=`/club/message/update/${message.id}`) 
+                                            span.icon.mdi--edit
+                            div.bottomBar
+                                div.speechBalloon
+                                    div.triangle
+                                    div.message
+                                        p!= message.content
+                                p.time= message.time
                         if loginUser && removeId && removeId === message.id 
                             div.removeWrap
                                 div.alert
