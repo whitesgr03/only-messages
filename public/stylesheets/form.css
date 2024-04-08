@@ -28,8 +28,6 @@ form label.error + span {
 	color: var(--light-error-label-color);
 }
 
-/* This label pseudo-class will override error style  */
-
 form label:focus-within {
 	color: var(--light-scheme-highlight-color);
 }
@@ -92,16 +90,6 @@ form button.submit:hover {
 	color: var(--light-scheme-color);
 }
 
-/* form a {
-	background-color: var(--light-scheme-bgc);
-	color: var(--light-scheme-color);
-}
-
-form a:hover {
-	color: var(--dark-scheme-color);
-	background-color: var(--light-scheme-highlight-color);
-} */
-
 /* dark scheme */
 .dark form {
 	border-color: var(--dark-scheme-color);
@@ -153,15 +141,3 @@ form a:hover {
 	text-decoration-color: var(--dark-scheme-highlight-color);
 	color: var(--dark-scheme-highlight-color);
 }
-
-/* 
-.dark form a {
-	color: var(--dark-scheme-color);
-	background-color: var(--dark-button-link-hover-bgc);
-	border: 0;
-}
-
-.dark form a:hover {
-	color: var(--light-scheme-color);
-	background-color: var(--dark-scheme-highlight-color);
-} */
