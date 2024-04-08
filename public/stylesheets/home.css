@@ -92,7 +92,15 @@
 	color: var(--dark-scheme-color);
 }
 
-main .delete .name {
+.home ul li .wrap .removeWrap .alert a:hover {
+	background-color: var(--light-scheme-color);
+	color: var(--dark-scheme-color);
+}
+.home ul li .wrap .removeWrap .alert form button.submit:hover {
+	background-color: var(--light-scheme-main);
+	color: var(--light-scheme-color);
+}
+
 	display: inline-block;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -294,7 +302,15 @@ main .delete .name {
 	color: var(--light-scheme-color);
 }
 
-.dark .home ul li .content .speechBalloon .triangle {
+.dark .home ul li .wrap .removeWrap .alert a:hover {
+	background-color: var(--dark-scheme-color);
+	color: var(--light-scheme-color);
+}
+.dark .home ul li .wrap .removeWrap .alert form button.submit:hover {
+	background-color: var(--dark-scheme-bgc);
+	color: var(--dark-scheme-color);
+}
+
 	border-right-color: var(--dark-button-link-hover-bgc);
 }
 
