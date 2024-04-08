@@ -43,9 +43,95 @@ header nav .account {
 	padding: 5px 10px;
 }
 
-header nav .account .wrapIcon {
+header nav .account .wrapIcon > * {
+	width: var(--icon-mobile-size);
+	height: var(--icon-mobile-size);
+}
+
+header nav .account .wrapIcon > span {
+	border: 2px solid var(--light-scheme-color);
 	border-radius: 100%;
-	border: 4px solid var(--light-scheme-color);
+}
+
+header nav .account .wrapIcon > div {
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--light-scheme-color);
+	color: var(--dark-scheme-color);
+	font-size: 2.5rem;
+	font-weight: 700;
+	border-radius: 100%;
+}
+
+header nav .theme {
+	--toggle-width: 45px;
+	--toggle-padding: 2px;
+	--toggle-border: 2px;
+	--toggle-slide: calc(var(--toggle-width) / 3);
+	display: flex;
+	align-items: center;
+}
+
+header nav .theme .wrapToggleIcon {
+	flex: 1 1 60%;
+	position: relative;
+}
+
+header nav .theme .wrapToggleIcon > div {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+header nav .theme .wrapToggleIcon > div:last-of-type {
+	opacity: 0;
+	visibility: hidden;
+}
+
+header nav .theme > div > div .icon {
+	width: var(--icon-desktop-size);
+	height: var(--icon-desktop-size);
+}
+
+header nav .theme .wrapToggleButton {
+	flex: 1 1 40%;
+	display: flex;
+	justify-content: center;
+}
+
+header nav .theme .wrapToggleButton button {
+	height: calc(
+		var(--toggle-width) / 2 +
+			calc(var(--toggle-padding) + calc(var(--toggle-border) * 2) + 2px)
+	);
+	width: calc(var(--toggle-width) + var(--toggle-slide));
+	border-radius: var(--toggle-width);
+	background-color: var(--light-scheme-highlight-color);
+	border: var(--toggle-border) solid var(--light-scheme-color);
+	position: relative;
+	padding: 0 var(--toggle-padding);
+}
+
+header nav .theme button div {
+	display: flex;
+	align-items: center;
+	transform: translateX(0%);
+	border: 2px solid var(--light-scheme-color);
+	background-color: var(--light-scheme-bgc);
+	border-radius: 100%;
+	height: calc(var(--toggle-width) / 2);
+	width: calc(var(--toggle-width) / 2);
+	transition: transform 0.3s ease;
+}
+
+header nav > .theme {
+	display: none;
 }
 
 header nav ul {
@@ -83,71 +169,6 @@ header nav ul li p span:first-of-type {
 
 header nav ul li p span:last-of-type {
 	flex: 1 1 auto;
-}
-
-header nav ul li .theme {
-	--toggle-width: 45px;
-	--toggle-padding: 2px;
-	--toggle-border: 2px;
-	--toggle-slide: calc(var(--toggle-width) / 3);
-	display: flex;
-	align-items: center;
-}
-
-header nav ul li .theme .wrapToggleIcon {
-	flex: 1 1 60%;
-	position: relative;
-}
-
-header nav ul li .theme .wrapToggleIcon > div {
-	display: flex;
-	align-items: center;
-	column-gap: 10px;
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translateY(-50%);
-}
-
-header nav ul li .theme .wrapToggleIcon > div:last-of-type {
-	opacity: 0;
-	visibility: hidden;
-}
-
-header nav ul li .theme > div > div .icon {
-	width: var(--icon-desktop-size);
-	height: var(--icon-desktop-size);
-}
-
-header nav ul li .theme .wrapToggleButton {
-	flex: 1 1 40%;
-	display: flex;
-	justify-content: center;
-}
-
-header nav ul li .theme .wrapToggleButton button {
-	height: calc(
-		var(--toggle-width) / 2 +
-			calc(var(--toggle-padding) + calc(var(--toggle-border) * 2) + 2px)
-	);
-	width: calc(var(--toggle-width) + var(--toggle-slide));
-	border-radius: var(--toggle-width);
-	background-color: var(--light-scheme-highlight-color);
-	border: var(--toggle-border) solid var(--light-scheme-color);
-	position: relative;
-	padding: 0 var(--toggle-padding);
-}
-
-header nav ul li .theme button div {
-	display: flex;
-	align-items: center;
-	transform: translateX(0%);
-	border: 2px solid var(--light-scheme-color);
-	background-color: var(--light-scheme-bgc);
-	border-radius: 100%;
-	height: calc(var(--toggle-width) / 2);
-	width: calc(var(--toggle-width) / 2);
-	transition: transform 0.3s ease;
 }
 
 header nav ul li a {
