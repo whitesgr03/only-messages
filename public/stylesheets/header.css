@@ -179,7 +179,10 @@ header nav ul li a {
 	width: 100%;
 }
 
-header nav ul li .icon {
+header nav ul li a:hover {
+	background-color: var(--light-scheme-shadow);
+}
+
 	width: var(--icon-desktop-size);
 	height: var(--icon-desktop-size);
 }
