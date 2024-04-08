@@ -215,17 +215,10 @@ header .mdi--login {
 	box-shadow: none;
 }
 
-.dark header nav .account .wrapIcon {
-	border: 2px solid var(--dark-scheme-color);
-}
-
-.dark header nav ul {
-	border: 1px solid var(--dark-scheme-shadow);
-	background-color: var(--dark-button-link-hover-bgc);
-}
-
-.dark header nav ul li:first-of-type {
-	border-bottom: 1px solid var(--dark-scheme-color);
+.dark header nav .account .wrapIcon > div {
+	background-color: var(--dark-scheme-color);
+	color: var(--light-scheme-color);
+	font-weight: 500;
 }
 
 .dark header nav ul li .theme {
