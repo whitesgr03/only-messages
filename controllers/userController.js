@@ -152,7 +152,7 @@ const userSignUpPost = [
 							password: hashedPassword,
 							lastModified: currentTime,
 							createdAt: currentTime,
-							isAdmin: false,
+							isAdmin: process.env.NODE_ENV === "development",
 						});
 
 						const oneDay = 24 * 60 * 60 * 1000;
