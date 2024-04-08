@@ -27,12 +27,7 @@ process.env.NODE_ENV === "production" &&
 		helmet({
 			contentSecurityPolicy: {
 				directives: {
-					imgSrc: [
-						// "storage.googleapis.com",
-						// "ik.imagekit.io",
-						"data:",
-						"blob:",
-					],
+					imgSrc: ["'self'", "data:", "blob:"],
 					styleSrc: [
 						"'self'",
 						"fonts.googleapis.com",
