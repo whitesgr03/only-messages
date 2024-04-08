@@ -97,8 +97,7 @@ form button.submit:hover {
 
 /* dark scheme */
 .dark form {
-	border-color: var(--dark-scheme-color);
-	border-width: 1px;
+	border: 1px solid var(--dark-scheme-color);
 }
 
 .dark form label.error {
