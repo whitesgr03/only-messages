@@ -1,5 +1,4 @@
 const asyncHandler = require("express-async-handler");
-const fetch = require("node-fetch");
 const { validationResult, checkSchema } = require("express-validator");
 
 const authenticate = require("../utils/auth");
