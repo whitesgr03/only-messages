@@ -7,31 +7,24 @@ const permission = require("../utils/permission");
 const Message = require("../models/message");
 
 const index = asyncHandler(async (req, res, next) => {
-	const getFakeMessages = async () => {
-		const randomNumber = 2;
-		const response = await fetch(
-			`https://randomuser.me/api/?results=${randomNumber}&inc=email,name,picture`
-		);
-		const data = await response.json();
-
+	const getFakeMessages = () => {
+		const name = "Anonymous";
 		const messages = [
 			{
 				user: {
-					name: data.results[0].name.last,
+					name,
 				},
-				time: "15:33",
+				isFirstMessageOfTheDay: true,
 				content:
 					"This is the default message! If you join our members, you can watch all members' messages.",
 			},
 			{
 				user: {
-					name: data.results[1].name.last,
+					name,
 				},
-				time: "14:30",
 				content: "Create an account to enjoy Only Messages!",
 			},
 		];
-
 		return messages;
 	};
 
