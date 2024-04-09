@@ -101,6 +101,7 @@ const userSignUpPost = [
 					bail: true,
 				},
 				escape: true,
+				toLowerCase: true,
 				custom: {
 					options: value =>
 						new Promise(async (resolve, reject) => {
