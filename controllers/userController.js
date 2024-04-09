@@ -16,6 +16,7 @@ const userSignInPost = asyncHandler(async (req, res, next) => {
 				errorMessage: "The email is required.",
 			},
 			escape: true,
+			toLowerCase: true,
 		},
 		password: {
 			trim: true,
