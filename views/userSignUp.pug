@@ -21,7 +21,7 @@ block content
                     )
                 span.message(aria-live="polite")= errors && errors.name ? errors.name.msg : 'This is a placeholder'
             div
-                label(class= errors && errors.name ? 'error' : '' for="user_email") Email
+                label(class= errors && errors.email ? 'error' : '' for="user_email") Email
                     input#user_email(
                         type="text" 
                         name="email" 
