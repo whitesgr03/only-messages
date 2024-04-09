@@ -38,7 +38,7 @@ const index = asyncHandler(async (req, res, next) => {
 
 	const messages = req.isAuthenticated()
 		? await getMessages()
-		: await getFakeMessages();
+		: getFakeMessages();
 
 	res.render("index", {
 		messages,
