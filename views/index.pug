@@ -14,7 +14,7 @@ block content
             each message in messages
                 li(class= (loginUser && loginUser.id === message.user.id ? 'reverse' : ''))
                     if message.isFirstMessageOfTheDay
-                        div.date= message.date
+                        div.date= message.createdAt
                     div.wrap
                         div.content(class= (removeId && removeId === message.id ? 'remove' : '') )
                             div.profile
@@ -35,7 +35,7 @@ block content
                                     div.triangle
                                     div.message
                                         p!= message.content
-                                p.time= message.time
+                                p.time= message.createdAt
                         if loginUser && removeId && removeId === message.id 
                             div.removeWrap
                                 div.alert
