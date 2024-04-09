@@ -8,8 +8,9 @@
 	"description": "An exclusive clubhouse where the members can write anonymous posts.",
 	"main": "index.js",
 	"scripts": {
-		"start": "node --env-file=.env --env-file=.env.production index",
-		"watch": "node --env-file=.env --env-file=.env.development --watch index"
+		"start": "NODE_ENV=production node --env-file=.env --env-file=.env.production index",
+		"pro": "NODE_ENV=production node --env-file=.env --env-file=.env.development --watch index",
+		"dev": "NODE_ENV=development node --env-file=.env --env-file=.env.development --watch index"
 	},
 	"dependencies": {
 		"bcrypt": "^5.1.1",
