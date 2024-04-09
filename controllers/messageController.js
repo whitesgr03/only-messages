@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const { validationResult, checkSchema } = require("express-validator");
 
 const authenticate = require("../utils/auth");
-const validateId = require("../utils/validId");
+const permission = require("../utils/permission");
 const Message = require("../models/message");
 
 const index = asyncHandler(async (req, res, next) => {
@@ -136,7 +136,7 @@ const messageCreatePost = [
 ];
 const messageUpdateGet = [
 	authenticate,
-	validateId,
+	permission,
 	asyncHandler(async (req, res, next) => {
 		const message = await Message.findById(req.params.id, {
 			content: 1,
@@ -150,7 +150,7 @@ const messageUpdateGet = [
 ];
 const messageUpdatePost = [
 	authenticate,
-	validateId,
+	permission,
 	asyncHandler(async (req, res, next) => {
 		const validationSchema = {
 			content: {
@@ -200,7 +200,7 @@ const messageUpdatePost = [
 ];
 const messageDeleteGet = [
 	authenticate,
-	validateId,
+	permission,
 	asyncHandler(async (req, res, next) => {
 		const messages = await Message.find({})
 			.populate("user")
@@ -215,7 +215,7 @@ const messageDeleteGet = [
 ];
 const messageDeletePost = [
 	authenticate,
-	validateId,
+	permission,
 	asyncHandler(async (req, res, next) => {
 		await Message.findByIdAndDelete(req.params.id).exec();
 		res.redirect("/");
