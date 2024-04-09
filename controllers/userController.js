@@ -189,12 +189,12 @@ const userSignUpPost = [
 	userSignInPost,
 ];
 const userLogoutGet = asyncHandler(async (req, res, next) => {
-	req.user &&
-		req.logout(err => {
-			err ? next(err) : res.redirect("/");
-		});
+	req.user
+		? req.logout(err => {
+				err ? next(err) : res.redirect("/");
+		  })
+		: res.redirect("/");
 });
-
 module.exports = {
 	userSignUpGet,
 	userSignUpPost,
