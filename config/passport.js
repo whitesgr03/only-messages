@@ -10,7 +10,7 @@ passport.use(
 		{ usernameField: "email" },
 		async (email, password, done) => {
 			try {
-				const user = await User.findOne({ email: email.toLowerCase() });
+				const user = await User.findOne({ email });
 				const match =
 					user && (await bcrypt.compare(password, user.password));
 
