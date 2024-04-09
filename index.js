@@ -15,7 +15,10 @@ const handleListening = async () => {
 			.en0.find(interface => interface.family === "IPv4").address;
 
 	serverLog(`Listening on Local:            http://localhost:${PORT}`);
-	serverLog(`Listening on On Your Network:  http://${IP_Address}:${PORT}`);
+	process.env.NODE_ENV === "development" &&
+		serverLog(
+			`Listening on On Your Network:  http://${IP_Address}:${PORT}`
+		);
 };
 
 const handleError = error => {
