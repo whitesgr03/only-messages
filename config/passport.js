@@ -16,7 +16,11 @@ passport.use(
 
 				match
 					? done(null, user.id)
-					: done(null, false, "Wrong password please try again.");
+					: done(
+							null,
+							false,
+							"Wrong email or password please try again."
+					  );
 			} catch (err) {
 				done(err);
 			}
