@@ -11,12 +11,12 @@ html(lang="en")
         link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png")
         link(rel="shortcut icon" href="/images/favicon.ico")
         title Only Messages
-        script(type='text/javascript', src='/javascripts/index.js', defer)
+        script(type='text/javascript', src='/javascripts/index.js', nonce=cspNonce, defer)
         link(rel='stylesheet', href='/stylesheets/index.css')
         
         block head
     body 
-        script(type='text/javascript', src='/javascripts/changeDarkScheme.js')
+        script(type='text/javascript', src='/javascripts/changeDarkScheme.js', nonce=cspNonce)
         .container
             header 
                 div.logo

@@ -2,8 +2,8 @@ extends layout
 
 block head
     link(rel='stylesheet', href='/stylesheets/home.css')
-    script(type='text/javascript', src='/javascripts/getScrollPosition.js', defer)
-    script(type='text/javascript', src='/javascripts/formatDates.js', defer)
+    script(type='text/javascript', src='/javascripts/getScrollPosition.js', defer, nonce=cspNonce)
+    script(type='text/javascript', src='/javascripts/formatDates.js', defer, nonce=cspNonce)
 
 
 block content

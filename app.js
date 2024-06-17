@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const errorLog = require("debug")("ServerError");
+const { randomBytes } = require("node:crypto");
 
 const MongoStore = require("connect-mongo");
 const session = require("express-session");
@@ -22,6 +23,11 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
+app.use((req, res, next) => {
+	res.locals.cspNonce = randomBytes(16).toString("base64");
+	next();
+});
+
 process.env.NODE_ENV === "production" &&
 	app.use(
 		helmet({
@@ -32,6 +38,12 @@ process.env.NODE_ENV === "production" &&
 						"'self'",
 						"fonts.googleapis.com",
 						"necolas.github.io",
+					],
+					baseUri: ["'none'"],
+					objectSrc: ["'none'"],
+					scriptSrc: [
+						(req, res) => `'nonce-${res.locals.cspNonce}'`,
+						"strict-dynamic",
 					],
 				},
 			},
